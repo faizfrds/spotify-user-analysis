@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize"
-const REDIRECT_URL = "http://localhost:3000/"
+const REDIRECT_URL = process.env.BASE_URL
 const clientID = process.env.CLIENT_ID
 
 const SPACE_DELIMITER = "%20";
