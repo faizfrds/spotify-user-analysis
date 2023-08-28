@@ -8,6 +8,7 @@ import axios from "axios";
 import { getReturnParamsFromSpotify } from "@/hooks/FetchParams";
 import GetRec from "./GetRecommendation";
 import { HiArrowLeft } from "react-icons/hi"
+import Profile from "./Profile";
 
 const Homepage = () => {
   const [login, isLoggedin] = useState(false);
@@ -32,7 +33,9 @@ const Homepage = () => {
       {login ? (
         <div className="justify-center flex">
           <div className="flex-col justify-center lg:mt-20">
-            <div className="text-white">my profile</div>
+            <div className="text-white">
+                <Profile accessToken={token}/>
+            </div>
             <div className="">
               {recs ? (
                 <div>
