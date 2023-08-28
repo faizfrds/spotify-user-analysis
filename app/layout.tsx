@@ -5,7 +5,7 @@ import { Figtree } from 'next/font/google'
 const inter = Figtree({ weight: ["300", "400", "500", "600", "700", "800"], subsets: ["latin"]})
 
 export const metadata: Metadata = {
-  title: 'Wrappify',
+  title: 'Recommendify',
   description: 'Spotify song tracker',
 }
 
