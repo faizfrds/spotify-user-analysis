@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize"
-const REDIRECT_URL = process.env.BASE_URL
+const redirectURL = process.env.BASE_URL
 const clientID = process.env.CLIENT_ID
 
 const SPACE_DELIMITER = "%20";
@@ -12,10 +12,11 @@ const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER);
 
 const Signin = () => {
 
+    console.log(redirectURL)
     const router = useRouter();
 
     const handleLogin = () => {
-        router.push(`${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${clientID}&redirect_uri=${REDIRECT_URL}&scope=${SCOPES_URL_PARAM}&response_type=token&show_dialog=true`);
+        router.push(`${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${clientID}&redirect_uri=${process.env.BASE_URL}&scope=${SCOPES_URL_PARAM}&response_type=token&show_dialog=true`);
     }
 
     return ( 
