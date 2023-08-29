@@ -47,7 +47,7 @@ export default function Home() {
       >
         {login ? (
           <div className="justify-center flex">
-            <div className="flex-col justify-center lg:mt-16 mt-12">
+            <div className="flex-col justify-center lg:mt-14 mt-12">
               <div className="text-white">
                 <Profile accessToken={token} />
               </div>

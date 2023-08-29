@@ -18,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <div className='bg-black'>
         <div className='bg-neutral-900 h-[100%]'>
           {children}
           <Footer />
+        </div>
         </div>
       </body>
     </html>
