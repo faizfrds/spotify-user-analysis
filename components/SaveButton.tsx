@@ -67,10 +67,10 @@ const SaveButton: React.FC<SaveButtonProps> = ({ trackId, token }) => {
 
   return (
     <button
-      className="text-neutral-500 hover:text-white cursor-pointer"
+     className="md:mr-3"
       onClick={handleLike}
     >
-      <Icon className={ (isLiked ? "text-green-500" : "text-neutral-500")} size={20} />
+      <Icon className={ (isLiked ? "text-green-500" : "text-neutral-500 hover:text-white")} size={20} />
     </button>
   );
 };

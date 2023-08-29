@@ -52,8 +52,7 @@ const GetRec: React.FC<GetRecProps> = ({ accessToken }) => {
         <>
           {data.map((item: any) => (
             <div className="flex mt-5 items-center justify-between">
-              <Cards track={item} />
-              <SaveButton trackId={item.id} token={token}/>
+              <Cards track={item} button={true} token={token}/>
             </div>
           ))}
         </>
