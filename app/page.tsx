@@ -1,5 +1,4 @@
 "use client";
-import Homepage from "@/components/Home";
 
 import { useEffect, useLayoutEffect, useState } from "react";
 import axios from "axios";
