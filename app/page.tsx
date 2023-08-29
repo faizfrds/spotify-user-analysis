@@ -73,7 +73,7 @@ export default function Home() {
 
                     {/* Open tabs for choosing timeframe of top tracks */}
                     <ul
-                      className="flex mb-0 list-none flex-wrap pt-3 pb-1 flex-row mx-2"
+                      className="flex mb-0 list-none flex-wrap pt-3 pb-1 "
                       role="tablist"
                     >
                       <li className="-mb-px px-2 my-2 flex-auto text-center">
