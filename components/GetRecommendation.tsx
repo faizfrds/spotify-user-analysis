@@ -43,8 +43,8 @@ const GetRec: React.FC<GetRecProps> = ({ accessToken }) => {
 
   return (
     <div className="text-white p-5">
-      <h2 className="text-xl font-semibold capitalize">
-        recommended songs based on your activities
+      <h2 className="text-xl font-semibold capitalize mb-9">
+        recommended songs for you
       </h2>
       {isLoading ? (
         <div>Loading...</div>
