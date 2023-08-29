@@ -32,6 +32,18 @@ const SaveButton: React.FC<SaveButtonProps> = ({ trackId, token }) => {
           .catch((error) => toast.error("Error occured"));
 
     }
+    else{
+      await axios({
+        method: "delete",
+        url: `https://api.spotify.com/v1/me/tracks?ids=${trackId}`,
+        headers: { Authorization: `Bearer ${token}` },
+      })
+        .then(() => {
+          setIsLiked(false)
+          toast.success("Removed from liked songs");
+        })
+        .catch((error) => toast.error("Error occured"));
+    }
     //     .post(`https://api.spotify.com/v1/me/tracks?ids=0oj2GxdRBcNAnMouNndu8J`, {
     //       headers: {
     //         Authorization: `Bearer ${token}`,
