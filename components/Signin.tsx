@@ -20,7 +20,7 @@ const Signin = () => {
     }
 
     return ( 
-        <div className="h-[95vh] flex flex-col text-center justify-center text-3xl">
+        <div className="h-[90vh] flex flex-col text-center justify-center text-3xl">
             <div className="text-white font-semibold">
                 Spotify Profile Viewer
             </div>

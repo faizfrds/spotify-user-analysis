@@ -36,7 +36,7 @@ export default function Home() {
     <div
       className={
         "bg-neutral-900 " +
-        (login ? "lg:h-[108vh] md:h-[100vh] sm:h-[112vh] h-[136vh]" : "h-[90vh]")
+        (login ? "lg:h-[108vh] md:h-[100vh] sm:h-[112vh] h-[136vh]" : "h-[70vh]")
       }
     >
       <div
