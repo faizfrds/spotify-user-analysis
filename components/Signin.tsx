@@ -6,7 +6,7 @@ const redirectURL = process.env.BASE_URL
 const clientID = process.env.CLIENT_ID
 
 const SPACE_DELIMITER = "%20";
-const SCOPES = ["playlist-read-private", "user-top-read"];
+const SCOPES = ["playlist-read-private", "user-top-read", "user-library-read", "user-library-modify"];
 const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER);
 
 

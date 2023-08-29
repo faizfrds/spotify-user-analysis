@@ -10,6 +10,7 @@ import { getReturnParamsFromSpotify } from "@/hooks/FetchParams";
 import GetRec from "@/components/GetRecommendation";
 import Profile from "@/components/Profile";
 import Header from "@/components/Header";
+import GetSaved from "@/components/GetSaved";
 
 export default function Home() {
   const [login, isLoggedin] = useState(false);
@@ -53,10 +54,10 @@ export default function Home() {
               </div>
               <div className="">
                 {recs ? (
-                  <div>
+                  <div className="justify-center flex flex-col lg:w-[85vh]">
                     <button
                       onClick={() => getRecs(false)}
-                      className=" text-white justify-center mt-4 py-3 px-4 rounded-full text-xl capitalize transition-colors flex items-center group"
+                      className=" text-white mt-4 py-3 px-4 rounded-full text-xl capitalize transition-colors flex items-center group"
                     >
                       <HiArrowLeft
                         className="group-hover:-translate-x-1 transition mx-2"
