@@ -20,7 +20,7 @@ const GetRec: React.FC<GetRecProps> = ({ accessToken }) => {
 
     await axios
       .get(
-        `https://api.spotify.com/v1/recommendations?limit=5&seed_tracks=${trackID.join(`,`)}`,
+        `https://api.spotify.com/v1/recommendations?limit=6&seed_tracks=${trackID.join(`,`)}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

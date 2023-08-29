@@ -11,7 +11,7 @@ const Cards: React.FC<CardsProps> = ({track}) => {
 
             <img src={track.album.images[1].url}/>
             <div className="px-4 justify-center flex flex-col">
-                <h1 className="md:text-2xl text-md">
+                <h1 className="md:text-xl text-md">
                     {track.name}
                 </h1>
                 <h2 className="text-neutral-300">

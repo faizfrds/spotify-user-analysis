@@ -48,7 +48,7 @@ const GetRecent: React.FC<GetRecentProps> = ({ accessToken, timeRange }) => {
   }
 
   return (
-    <div className="text-white p-5">
+    <div className="text-white p-5 w-full">
 
       {isLoading ? (
         <div>Loading...</div>

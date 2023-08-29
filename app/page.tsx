@@ -15,8 +15,6 @@ import GetSaved from "@/components/GetSaved";
 export default function Home() {
   const [login, isLoggedin] = useState(false);
   const [token, setAccessToken] = useState("");
-  const [data, setData] = useState({});
-  const [loading, isLoading] = useState(true);
   const [recs, getRecs] = useState(false);
   const [openTab, setOpenTab] = useState(1);
 
@@ -136,7 +134,7 @@ export default function Home() {
                         className={openTab === 1 ? "block" : "hidden"}
                         id="link1"
                       >
-                        <div className="md:w-[60vh]">
+                        <div className="lg:w-full md:w-[60vh]">
                           <GetRecent
                             accessToken={token}
                             timeRange="short_term"
@@ -147,7 +145,7 @@ export default function Home() {
                         className={openTab === 2 ? "block" : "hidden"}
                         id="link2"
                       >
-                        <div className="md:w-[60vh]">
+                        <div className="lg:w-full md:w-[60vh]">
                           <GetRecent
                             accessToken={token}
                             timeRange="medium_term"
@@ -158,7 +156,7 @@ export default function Home() {
                         className={openTab === 3 ? "block" : "hidden"}
                         id="link2"
                       >
-                        <div className="md:w-[60vh]">
+                        <div className="lg:w-full md:w-[60vh]">
                           <GetRecent
                             accessToken={token}
                             timeRange="long_term"
