@@ -16,6 +16,7 @@ export default function Home() {
   const [data, setData] = useState({});
   const [loading, isLoading] = useState(true);
   const [recs, getRecs] = useState(false);
+  const [openTab, setOpenTab] = useState(1);
 
   useEffect(() => {
     if (window.location.hash) {
@@ -27,6 +28,8 @@ export default function Home() {
       setAccessToken(access_token);
     }
   }, []);
+
+  console.log(openTab)
 
   return (
     <div className="bg-neutral-900 h-[110vh]">
@@ -52,8 +55,90 @@ export default function Home() {
                   <GetRec accessToken={token} />
                 </div>
               ) : (
-                <div className="justify-center flex flex-col">
-                  <GetRecent accessToken={token} />
+                <div className="justify-center flex flex-col md:w-[85vh]">
+                  <h1 className="mt-3 text-center text-white text-xl font font-semibold">
+                    Your Top Tracks
+                  </h1>
+
+                  {/* Open tabs for choosing timeframe of top tracks */}
+                  <ul
+                    className="flex mb-0 list-none flex-wrap pt-3 pb-1 flex-row"
+                    role="tablist"
+                  >
+                    <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                      <a
+                        className={
+                          "text-xs font-bold uppercase px-5 py-3 mx-4 shadow-xl rounded-full block leading-normal  " +
+                          (openTab === 1
+                            ? "text-white bg-green-500"
+                            : "text-neutral-300")
+                        }
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setOpenTab(1);
+                        }}
+                        role="tablist"
+                      >
+                        this month
+                      </a>
+                    </li>
+                    <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                      <a
+                        className={
+                          "text-xs font-bold uppercase px-5 py-3 mx-4 shadow-xl rounded-full block leading-normal  " +
+                          (openTab === 2
+                            ? "text-white bg-green-500"
+                            : "text-neutral-300 bg-neutral-900/80 ")
+                        }
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setOpenTab(2);
+                        }}
+                        role="tablist"
+                      >
+                        last 6 months
+                      </a>
+                    </li>
+                    <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                      <a
+                        className={
+                          "text-xs font-bold uppercase px-5 py-3 mx-4 shadow-xl rounded-full block leading-normal  " +
+                          (openTab === 3
+                            ? "text-white bg-green-500"
+                            : "text-neutral-300 bg-neutral-900/80")
+                        }
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setOpenTab(3);
+                        }}
+                        role="tablist"
+                      >
+                        all time
+                      </a>
+                    </li>
+                  </ul>
+
+                  <div className="tab-content">
+                    <div
+                      className={openTab === 1 ? "block" : "hidden"}
+                      id="link1"
+                    >
+                      <GetRecent accessToken={token} timeRange="short_term"/>
+                    </div>
+                    <div
+                      className={openTab === 2 ? "block" : "hidden"}
+                      id="link2"
+                    >
+                      <GetRecent accessToken={token} timeRange="medium_term" />
+                    </div>
+                    <div
+                      className={openTab === 3 ? "block" : "hidden"}
+                      id="link2"
+                    >
+                      <GetRecent accessToken={token} timeRange="long_term" />
+                    </div>
+                  </div>
+
                   <div className="flex justify-center">
                     <button
                       onClick={() => getRecs(true)}

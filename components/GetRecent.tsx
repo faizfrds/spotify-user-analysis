@@ -5,20 +5,22 @@ import { Tracks } from "@/types";
 
 interface GetRecentProps {
   accessToken: string;
+  timeRange: string;
 }
 
 
 export let trackID = new Array(5);
 
-const GetRecent: React.FC<GetRecentProps> = ({ accessToken }) => {
+const GetRecent: React.FC<GetRecentProps> = ({ accessToken, timeRange }) => {
   const token = accessToken;
+  console.log(timeRange)
   const [data, setData] = useState([{}]);
   const [isLoading, setIsLoading] = useState(true);
 
   const getRecentlyListened = async () => {
     await axios
       .get(
-        "https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=5",
+        `https://api.spotify.com/v1/me/top/tracks?time_range=${timeRange}&limit=5`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
