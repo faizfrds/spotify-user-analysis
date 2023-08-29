@@ -49,7 +49,7 @@ const GetRecent: React.FC<GetRecentProps> = ({ accessToken, timeRange }) => {
 
   return (
     <div className="text-white p-5">
-      <h2 className="text-xl capitalize font-semibold">top tracks this month</h2>
+
       {isLoading ? (
         <div>Loading...</div>
       ) : (

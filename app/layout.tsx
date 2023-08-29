@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Figtree } from 'next/font/google'
@@ -17,8 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className='bg-neutral-900'>
+        <div className='bg-neutral-900 h-[100%]'>
           {children}
+          <Footer />
         </div>
       </body>
     </html>
