@@ -29,7 +29,7 @@ const Cards: React.FC<CardsProps> = ({ track, button, token, index }) => {
         target="#"
         className="items-center md:block hidden"
       >
-        <BsPlayFill size={50} className="text-neutral-900 group-hover:text-white pl-3"/>
+        <BsPlayFill size={40} className="text-neutral-900 group-hover:text-white pl-3"/>
         <p className="text-neutral-500 justify-center md:flex md:group-hover:hidden pl-3 -translate-y-6">{index}</p>
       </a>
 
