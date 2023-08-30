@@ -2,7 +2,7 @@
 
 import { useEffect, useLayoutEffect, useState } from "react";
 import axios from "axios";
-import { HiArrowLeft } from "react-icons/hi";
+import { MdArrowBackIosNew } from "react-icons/md";
 
 import Signin from "@/components/Signin";
 import GetRecent from "@/components/GetRecent";
@@ -29,13 +29,14 @@ export default function Home() {
     }
   }, [isLoggedin]);
 
-  console.log(openTab);
 
   return (
     <div
       className={
         "bg-neutral-900 " +
-        (login ? "lg:h-[108vh] md:h-[100vh] sm:h-[112vh] h-[136vh]" : "h-[70vh]")
+        (login
+          ? "lg:h-[108vh] md:h-[100vh] sm:h-[112vh] h-[136vh]"
+          : "h-[70vh]")
       }
     >
       <div
@@ -55,15 +56,16 @@ export default function Home() {
                   <div className="justify-center flex flex-col lg:w-[85vh]">
                     <button
                       onClick={() => getRecs(false)}
-                      className=" text-white mt-4 py-3 px-4 rounded-full text-xl capitalize transition-colors flex items-center group"
+                      className=" text-white w-fit mt-4 py-3 mx-4 px-1 rounded-full flex items-center group lg:bg-neutral-900 lg:hover:bg-neutral-600"
                     >
-                      <HiArrowLeft
-                        className="group-hover:-translate-x-1 transition mx-2"
-                        size={15}
+                      <MdArrowBackIosNew
+                        className="mx-2"
+                        size={20}
                       />
-                      <p className="text-neutral-300">Back</p>
                     </button>
-                    <GetRec accessToken={token} />
+                    <div className="lg:w-full md:w-[60vh]">
+                      <GetRec accessToken={token} />
+                    </div>
                   </div>
                 ) : (
                   <div className="justify-center flex flex-col lg:w-[85vh] ">
@@ -73,10 +75,10 @@ export default function Home() {
 
                     {/* Open tabs for choosing timeframe of top tracks */}
                     <ul
-                      className="flex mb-0 list-none flex-wrap pt-3 pb-1 "
+                      className="flex mb-0 flex-wrap pt-3 pb-1 px-6 "
                       role="tablist"
                     >
-                      <li className="-mb-px px-2 my-2 flex-auto text-center">
+                      <li className="mb-1 mx-1 my-2 flex-auto text-center">
                         <a
                           className={
                             "text-xs font-bold uppercase px-4 py-3 shadow-xl rounded-full block leading-normal cursor-pointer " +
@@ -93,7 +95,7 @@ export default function Home() {
                           this month
                         </a>
                       </li>
-                      <li className="-mb-px px-2 my-2 flex-auto text-center">
+                      <li className="mb-1 mx-1 my-2 flex-auto text-center">
                         <a
                           className={
                             "text-xs font-bold uppercase px-4 py-3 shadow-xl rounded-full block leading-normal cursor-pointer  " +
@@ -110,7 +112,7 @@ export default function Home() {
                           last 6 months
                         </a>
                       </li>
-                      <li className="-mb-px px-2 my-2 flex-auto text-center">
+                      <li className="mb-1 mx-1 my-2 flex-auto text-center">
                         <a
                           className={
                             "text-xs font-bold uppercase px-4 py-3 shadow-xl rounded-full block leading-normal cursor-pointer  " +

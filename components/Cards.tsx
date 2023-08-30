@@ -6,10 +6,10 @@ interface CardsProps {
   track: any;
   button?: boolean;
   token?: string;
+  index: number;
 }
 
-const Cards: React.FC<CardsProps> = ({ track, button, token }) => {
-    
+const Cards: React.FC<CardsProps> = ({ track, button, token, index }) => {
   const fetchData = () => {
     return (
       <div className="flex h-[10vh] w-full">
@@ -27,9 +27,10 @@ const Cards: React.FC<CardsProps> = ({ track, button, token }) => {
       <a
         href={"https://open.spotify.com/track/" + track.id}
         target="#"
-        className="md:flex hidden text-neutral-900 group-hover:text-white pl-3"
+        className="items-center md:block hidden"
       >
-        <BsPlayFill size={30} />
+        <BsPlayFill size={50} className="text-neutral-900 group-hover:text-white pl-3"/>
+        <p className="text-neutral-500 justify-center md:flex md:group-hover:hidden pl-3 -translate-y-6">{index}</p>
       </a>
 
       <a
@@ -40,9 +41,13 @@ const Cards: React.FC<CardsProps> = ({ track, button, token }) => {
         {fetchData()}
       </a>
 
-      <div className="w-full md:flex hidden">{fetchData()}</div>
+      <div className="w-full md:flex hidden">
+        {" "}
+        {/* Display only on medium to large viewports*/}
+        {fetchData()}
+      </div>
 
-      <div className=" justify-center md:hidden md:group-hover:flex">
+      <div className="md:-translate-x-4 md:hidden md:group-hover:flex">
         {button ? <SaveButton trackId={track.id} token={token!} /> : <></>}
       </div>
     </div>

@@ -2,8 +2,6 @@ import { useEffect, useLayoutEffect, useState } from "react";
 import axios from "axios";
 import Cards from "./Cards";
 import { trackID } from "./GetRecent";
-import { BiHeart } from "react-icons/bi";
-import SaveButton from "./SaveButton";
 
 interface GetRecProps {
   accessToken: string;
@@ -51,9 +49,9 @@ const GetRec: React.FC<GetRecProps> = ({ accessToken }) => {
         <div>Loading...</div>
       ) : (
         <>
-          {data.map((item: any) => (
-            <div className="flex mt-5 items-center justify-between">
-              <Cards track={item} button={true} token={token}/>
+          {data.map((item: any, index) => (
+            <div className="flex mt-5 w-full">
+              <Cards track={item} button={true} token={token} index={index + 1}/>
             </div>
           ))}
         </>

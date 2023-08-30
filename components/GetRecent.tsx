@@ -54,9 +54,9 @@ const GetRecent: React.FC<GetRecentProps> = ({ accessToken, timeRange }) => {
         <div>Loading...</div>
       ) : (
         <>
-          {data.map((item) => (
+          {data.map((item, index) => (
             <div className="flex mt-5 w-full">
-              <Cards track={item} />
+              <Cards track={item} index={index + 1}/>
             </div>
           ))}
 
