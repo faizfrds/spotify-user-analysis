@@ -3,7 +3,7 @@ import {AiFillGithub, AiOutlineGlobal} from 'react-icons/ai'
 
 export default function Footer() {
   return (
-    <div className='text-center pt-3 pb-5 text-neutral-500 text-sm'>
+    <div className='text-center lg:mt-18 md:mt-16 mt-5 pt-5 pb-5 text-neutral-500 text-sm'>
         <div className='flex justify-center gap-x-2'>
         
             <p className='mr-3'>
