@@ -28,8 +28,14 @@ const Signin = () => {
             <a onClick={handleLogin} className="bg-green-500 text-white w-fit mt-6 py-2 px-10 text-sm rounded-full uppercase tracking-widest hover:bg-green-400 hover:cursor-pointer transition">
                sign in to your spotify
             </a>
+            
+
             </div>
+            <a className="flex justify-center text-neutral-500 text-sm mt-8">
+                *Under development: Only works with registered accounts. Contact me if you'd like to be registered.
+            </a>
         </div>
+        
      );
 }
  
